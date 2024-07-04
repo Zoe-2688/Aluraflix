@@ -8,7 +8,7 @@ function Inicio() {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        fetch("https://my-json-server.typicode.com/Zoe-2688/aluraflix/videos")
+        fetch("https://raw.githubusercontent.com/Zoe-2688/Aluraflix/master/public/Data/db.json")
             .then(response => response.json())
             .then(data => {
                 console.log("Fetched videos:", data); // Log para verificar los datos
