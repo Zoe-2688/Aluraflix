@@ -1,0 +1,30 @@
+.link{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 1em;
+    color: var(--blanco);
+}
+.buttonLink {
+    display: inline-block;
+    width:110px;
+    height: auto;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #000000; /* Color de fondo para el botón */
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+}
+
+.buttonLink:hover {
+    background-color: #0056b3; /* Color de fondo cuando se hace hover */
+    border-color: #007bff;
+    box-shadow: 0 0 10px #007bff;
+}
