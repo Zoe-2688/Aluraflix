@@ -1,3 +1,4 @@
+import Pie from "Componentes/Pie/Pie";
 import Cabecera from "../../Componentes/Cabecera";
 import Container from "../../Componentes/Container";
 import FavoritoProvider from "../../context/Favoritos";
@@ -12,6 +13,7 @@ function PaginaBase() {
                     <Outlet />
                 </Container>
             </FavoritoProvider>
+            <Pie/>
         </main>
     );
 }

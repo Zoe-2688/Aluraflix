@@ -1,31 +1,91 @@
 /* Card.module.css */
+
+/* Contenedor principal de la tarjeta */
 .container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  padding: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.3s; /* Añadir transición para el efecto de sombra */
   position: relative;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 10px;
+  width: 100%;
+  max-width: 500px; /* Ancho máximo inicial */
+  height: 400px;
+  background-color: #000000; /* Fondo por defecto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra estándar */
 }
 
+/* Efecto de escala al pasar el cursor */
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* Efecto de brillo */
+}
+
+/* Enlace envolvente de la tarjeta */
 .link {
   text-decoration: none;
   color: inherit;
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 80%; /* Ajustar la altura para que la imagen ocupe el 80% del contenedor */
 }
 
+/* Imagen de la tarjeta */
 .capa {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra todo el área disponible manteniendo su proporción */
 }
 
-.actions {
+/* Contenedor de opciones (editar, borrar) */
+.opciones {
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
+  padding: 20px;
+  height: 20%; /* El espacio para las opciones ocupa el 20% de la altura del contenedor */
 }
 
+/* Iconos de opciones */
 .icon {
-  width: 24px;
-  height: 24px;
+  margin: 5px 5px 5px 40px;
+  width: 34px;
+  height: 34px;
   cursor: pointer;
 }
 
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
 
+.iconBorrar {
+  filter: invert(34%) sepia(96%) saturate(7458%) hue-rotate(354deg) brightness(102%) contrast(119%);
+}
+
+.iconEditar {
+  filter: invert(66%) sepia(80%) saturate(373%) hue-rotate(190deg) brightness(192%) contrast(119%);
+}
+
+/* Texto de las opciones */
+.opcionText {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 15px 70px 5px 5px; /* Espacio entre el icono y el texto */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .container {
+    max-width: 300px; /* Reducir el ancho máximo en pantallas más pequeñas */
+    height: auto; /* Ajustar la altura automáticamente según el contenido */
+  }
+
+  .link, .capa {
+    height: auto; /* Ajustar la altura automáticamente */
+  }
+}

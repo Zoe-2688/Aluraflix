@@ -1,6 +1,12 @@
-.container{
-    display: flex;
-    gap: 1rem;
-    justify-content: space-around;
-    padding: 1rem 7%;
-  }
+/* inicio.module.css */
+.container {
+  padding: 0rem 7%;
+  background-color: var(--dark-gray);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta el tamaño de las columnas según tu diseño */
+  gap: 1rem;
+  justify-items: center;
+}

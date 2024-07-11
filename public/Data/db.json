@@ -3,77 +3,97 @@
     {
       "id": 0,
       "titulo": "Trailer - Inmersión Dev con Javascript",
-      "link": "https://youtu.be/AQOcEeOV5DA?si=aAiqWRwI1EMRE329"
+      "link": "https://youtu.be/AQOcEeOV5DA?si=aAiqWRwI1EMRE329",
+      "img": "/images/inmersionDev.jpg",
+      "categoria": "CONSEJOS"
+      
     },
     {
       "id": 1,
       "titulo": "Cuándo usar let, var y const?",
       "link": "https://www.youtube.com/embed/PztCEdIJITY",
-      "img": "/images/FrontEnd 1.png"
+      "img": "/images/FrontEnd 1.png",
+      "categoria": "FrontEnd"
     },
     {
       "id": 2,
       "titulo": "¿Qué es JavaScript?",
       "link": "https://www.youtube.com/embed/GJfOSoaXk4s",
-      "img": "/images/FrontEnd 2.png"
+      "img": "/images/FrontEnd 2.png",
+      "categoria": "FrontEnd"
     },
     {
       "id": 3,
       "titulo": "Equipo Front End",
       "link": "https://www.youtube.com/embed/rpvrLaBQwgg",
-      "img": "/images/FrontEnd 3.png"
+      "img": "/images/FrontEnd 3.png",
+      "categoria": "FrontEnd"
     },
     {
       "id": 4,
       "titulo": "Spring Framework. ¿Qué es?",
       "link": "https://www.youtube.com/embed/t-iqt1b2qqk",
-      "img": "/images/BackEnd 1.png"
+      "img": "/images/BackEnd 1.png",
+      "categoria": "BackEnd"
     },
     {
       "id": 5,
       "titulo": "¿Qué es SQL y NoSQL?",
       "link": "https://www.youtube.com/embed/cLLKVd5CNLc",
-      "img": "/images/BackEnd 2.png"
+      "img": "/images/BackEnd 2.png",
+      "categoria": "BackEnd"
     },
     {
       "id": 6,
       "titulo": "Simplificando tu código en Java: Conoce los enum",
       "link": "https://www.youtube.com/embed/EoPvlE85XAQ",
-      "img": "/images/BackEnd 3.png"
+      "img": "/images/BackEnd 3.png",
+      "categoria": "BackEnd"
     },
     {
       "id": 7,
       "titulo": "¿Qué son las Soft Skills?",
       "link": "https://www.youtube.com/embed/vhwspfvI52k",
-      "img": "/images/InnovacionGestion 1.png"
+      "img": "/images/InnovacionGestion 1.png",
+      "categoria": "InnovacionGestion"
     },
     {
       "id": 8,
       "titulo": "7 Soft Skills más demandadas de 2024",
       "link": "https://www.youtube.com/embed/_-9grhDhxiU",
-      "img": "/images/InnovacionGestion 2.png"
+      "img": "/images/InnovacionGestion 2.png",
+      "categoria": "InnovacionGestion"
     },
     {
       "id": 9,
       "titulo": "¿Qué son las metodologías ágiles?",
       "link": "https://www.youtube.com/embed/6N3OkLCfK-0",
-      "img": "/images/InnovacionGestion 3.png"
+      "img": "/images/InnovacionGestion 3.png",
+      "categoria": "InnovacionGestion"
     },
       {
         "id": 10,
         "titulo": "Consejos para crear tu Portfolio",
-        "link": "https://www.youtube.com/embed/lKaXteKYbSA"
+        "link": "https://www.youtube.com/embed/lKaXteKYbSA",
+        "img": "/images/portafolio.jpg",
+        "categoria": "Consejos"
       },
       {
         "id": 11,
         "titulo": "Front-end vs. Back-end: ¡Descubre el lado perfecto para ti!",
-        "link": "https://www.youtube.com/embed/QjOWz9avkg8"
+        "link": "https://www.youtube.com/embed/QjOWz9avkg8",
+        "img": "/images/frontVsBackEnd.jpg",
+        "categoria": "CONSEJOS"
       },
       {
         "id": 12,
         "titulo": "Técnicas para mejorar tu aprendizaje",
-        "link": "https://www.youtube.com/embed/KSyqCUAr2CU"
+        "link": "https://www.youtube.com/embed/KSyqCUAr2CU&t=20s",
+        "img": "/images/mejorarAprendizaje.jpg",
+        "categoria": "CONSEJOS"
       }
+      
+      
     ]
   }
   

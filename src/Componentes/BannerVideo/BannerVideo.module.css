@@ -1,0 +1,94 @@
+.container {
+    position: fixed;
+    top: 70%; /* Ajusta según sea necesario */
+    right: 20px; /* Ajusta según sea necesario */
+    transform: translateY(-50%);
+    width: 500px; /* Ancho del contenedor */
+    padding: 20px;
+    background-color: #1b1a1a;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos si es necesario */
+  }
+  
+  .container img {
+    min-width: 500px;
+    height: auto;
+  }
+  
+  .container h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .container p {
+    margin-top: 5px;
+    color: #ffffff;
+  }
+  
+  /* Estilos del enlace */
+  .link {
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos de la imagen */
+  .capa {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .capa:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos del título */
+  .title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Estilos de la categoría */
+  .category {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  /* Estilos de navegación */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .navButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin: 0 20px 20px 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .toggleContainer Button{
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+
+  }

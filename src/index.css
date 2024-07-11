@@ -7,6 +7,7 @@
   --blanco: #fff;
   --negro: #222;
   --dark-gray: #0f0e0e;
+  --azul: #2271D1;
 }
 
 /* Estilos para el cuerpo del documento */
@@ -15,4 +16,5 @@ body {
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark-gray);
 }

@@ -1,0 +1,88 @@
+/* Estilos generales para pantallas grandes */
+.videoCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 0;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-bottom: 150px;
+  margin-top: 0px;
+  width: 100%;
+}
+
+.categoryTitle {
+  font-size: 42px;
+  font-weight: bold;
+  color: var(--dark-gray);
+  background-color: #888;
+  padding: 30px 10px 10px 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  width: 432px;
+  height: 70px;
+  text-align: center;
+  margin-left: 170px;
+}
+
+.videoList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  /* Reducir el tamaño de los títulos */
+  .categoryTitle {
+    font-size: 32px; /* Reducir el tamaño de la fuente */
+    padding: 20px 10px; /* Reducir el padding */
+    margin-left: 10%; /* Ajustar el margen izquierdo para centrar mejor en pantallas pequeñas */
+    width: 80%; /* Hacer que el título ocupe un 80% del ancho del contenedor */
+  }
+
+  /* Ajustar el contenedor de categoría */
+  .category {
+    width: 100%; /* Asegurarse de que las categorías ocupen el 100% del ancho disponible */
+    padding: 10px; /* Agregar un poco de padding para una mejor apariencia */
+  }
+
+  /* Ajustar la lista de videos */
+  .videoList {
+    gap: 20px; /* Reducir el espacio entre tarjetas */
+    justify-content: space-around; /* Espaciar de forma equilibrada */
+  }
+
+  /* Ajustar el tamaño de los contenedores de las tarjetas */
+  .container {
+    max-width: 300px; /* Reducir el tamaño máximo de las tarjetas */
+    height: 250px; /* Ajustar la altura para mantener la proporción */
+  }
+
+  /* Ajustar el tamaño de las imágenes dentro de las tarjetas */
+  .link, .capa {
+    height: 250px; /* Asegurarse de que la altura se reduzca proporcionalmente */
+  }
+
+  /* Ajustar los iconos de opciones en las tarjetas */
+  .opciones {
+    height: 40px; /* Ajustar la altura de la sección de opciones */
+  }
+
+  .icon {
+    width: 24px; /* Reducir el tamaño de los iconos */
+    height: 24px;
+  }
+
+  .opcionText {
+    font-size: 18px; /* Reducir el tamaño del texto de las opciones */
+  }
+}
