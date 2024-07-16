@@ -30,6 +30,26 @@ const VideosCategorias = () => {
     return <div>Cargando videos...</div>;
   }
 
+  const handleBorrar = (id) => {
+    console.log(`Intentando borrar video con ID ${id}`);
+    fetch(`http://localhost:3001/videos/${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo completar la solicitud');
+        }
+        console.log(`Video con ID ${id} eliminado correctamente`);
+        // Actualizar la lista de videos después de eliminar
+        setVideos(prevVideos => prevVideos.filter(video => video.id !== id));
+      })
+      .catch(error => {
+        console.error('Error al intentar eliminar el video:', error);
+        // Mostrar mensaje de error al usuario, por ejemplo:
+        alert('Hubo un problema al eliminar el video. Por favor, inténtalo de nuevo más tarde.');
+      });
+  };
+
   const videosPorCategoria = videos.reduce((acc, video) => {
     const { categoria } = video;
     if (!acc[categoria]) {
@@ -54,9 +74,12 @@ const VideosCategorias = () => {
               <Card
                 key={video.id}
                 id={video.id}
-                img={video.img}
                 titulo={video.titulo}
-                handleBorrar={() => console.log('Borrar video:', video.id)}
+                categoria={video.categoria}
+                img={video.img}
+                link={video.link}
+                descripcion={video.descripcion}
+                handleBorrar={() => handleBorrar(video.id)}
                 handleVerVideo={() => console.log('Ver video:', video.id)}
                 handleEditar={() => console.log('Editar video:', video.id)}
                 videoUrl={video.link}

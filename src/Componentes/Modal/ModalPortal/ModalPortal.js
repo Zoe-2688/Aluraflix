@@ -1,20 +1,20 @@
-// ModalPortal.js
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './../Modal.module.css';
 
 const modalRoot = document.getElementById('modal-root');
 
 function ModalPortal({ children }) {
-  const el = document.createElement('div');
+  const elRef = useRef(document.createElement('div'));
 
   useEffect(() => {
+    const el = elRef.current;
     modalRoot.appendChild(el);
+
     return () => {
       modalRoot.removeChild(el);
     };
-  }, [el]);
+  }, []);
 
   return ReactDOM.createPortal(
     <div className={`${styles.modalBackdrop} ${styles.displayBlock}`}>
@@ -26,7 +26,7 @@ function ModalPortal({ children }) {
         </div>
       </div>
     </div>,
-    el
+    elRef.current
   );
 }
 

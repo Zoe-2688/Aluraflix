@@ -6,7 +6,6 @@ function VideoDetalle() {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState(null);
-
   const { id } = useParams(); // Obtén el parámetro ID de la ruta
 
   useEffect(() => {

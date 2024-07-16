@@ -3,30 +3,34 @@ import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
 import iconBorrar from './Borrar.png';
 import iconEditar from './editar.png';
-import Modal from '../../Componentes/Modal/Modal'; // Ajusta la ruta si es necesario
-import VideoPlayer from '../../Componentes/VideoPlayer/VideoPlayer'; // Ajusta la ruta si es necesario
+import Modal from '../../Componentes/Modal/Modal';
+import VideoPlayer from '../../Componentes/VideoPlayer/VideoPlayer';
 
-function Card({ id, img, titulo, handleEditar, handleBorrar, videoUrl }) {
+function Card({ id, titulo, categoria,img, link, descripcion, handleEditar, handleBorrar, videoUrl }) {
   const [showModal, setShowModal] = useState(false);
   const [editingData, setEditingData] = useState(null);
 
+  // Function to open modal for editing
   const handleOpenModal = () => {
-    setEditingData({ id, titulo, videoUrl }); // Ajusta según la lógica de edición
+    setEditingData({ id, titulo, categoria, img, link, descripcion }); // Adjust according to edit logic
     setShowModal(true);
   };
 
+  // Function to close modal
   const handleCloseModal = () => {
     setShowModal(false);
   };
 
+  // Function to save edited data
   const handleSaveModal = (formData) => {
-    handleEditar(id, formData); // Llama a la función handleEditar con los datos del formulario
+    handleEditar(id, formData); // Call handleEditar function with form data
     setShowModal(false);
   };
 
+  // Render the component
   return (
     <div className={styles.container}>
-      <Link className={styles.link} to={`/video/${id}`}> {/* Enlace dinámico al detalle del video */}
+      <Link className={styles.link} to={`/video/${id}`}>
         <img
           src={process.env.PUBLIC_URL + img}
           className={styles.capa}
@@ -38,7 +42,7 @@ function Card({ id, img, titulo, handleEditar, handleBorrar, videoUrl }) {
           src={iconBorrar}
           alt="Icono borrar"
           className={`${styles.icon} ${styles.iconBorrar}`}
-          onClick={() => handleBorrar(id)}
+          onClick={() => handleBorrar(id)} 
         />
         <span className={styles.opcionText}>borrar</span>
         <img
@@ -55,7 +59,7 @@ function Card({ id, img, titulo, handleEditar, handleBorrar, videoUrl }) {
         handleSave={handleSaveModal}
         initialData={editingData}
       />
-      <VideoPlayer videoSrc={videoUrl} /> {/* Pasa la URL del video como prop */}
+      <VideoPlayer videoSrc={videoUrl} />
     </div>
   );
 }

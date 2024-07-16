@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './NuevoVideo.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const NuevoVideo = ({ addVideo, categorias }) => {
+const NuevoVideo = ({ categorias }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [image, setImage] = useState('');
@@ -10,6 +10,15 @@ const NuevoVideo = ({ addVideo, categorias }) => {
   const [description, setDescription] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
+
+  const handleClear = () => {
+    setTitle('');
+    setCategory('');
+    setImage('');
+    setVideo('');
+    setDescription('');
+    setIsSubmitted(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,6 +35,7 @@ const NuevoVideo = ({ addVideo, categorias }) => {
       link: video,
       img: image,
       categoria: category,
+      descripcion: description
     };
 
     // Simulación de envío de datos (POST request a json-server)
@@ -38,30 +48,20 @@ const NuevoVideo = ({ addVideo, categorias }) => {
     })
       .then(response => {
         if (!response.ok) {
-          throw new Error('Error al enviar los datos al servidor');
+          throw new Error('No se pudo completar la solicitud');
         }
         return response.json();
       })
       .then(data => {
         console.log('Datos enviados correctamente:', data);
-        addVideo(data); // Agregar el nuevo video al estado local
         handleClear(); // Limpiar formulario después de enviar
         navigate('/'); // Redirigir al inicio después de agregar el video
       })
-      
       .catch(error => {
-        console.error('Error al enviar los datos:', error);
-        // Manejar el error adecuadamente, mostrar mensaje al usuario, etc.
+        console.error('Error al enviar los datos:', error.message);
+        // Mostrar mensaje de error al usuario, por ejemplo:
+        alert('Hubo un problema al guardar el video. Por favor, inténtalo de nuevo más tarde.');
       });
-  };
-
-  const handleClear = () => {
-    setTitle('');
-    setCategory('');
-    setImage('');
-    setVideo('');
-    setDescription('');
-    setIsSubmitted(false);
   };
 
   return (
