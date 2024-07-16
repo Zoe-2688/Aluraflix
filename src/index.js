@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import AppRoutes from './routes'; // Importa tus rutas
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import styles from './index.css'
+import App from 'App/App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <AppRoutes />
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );

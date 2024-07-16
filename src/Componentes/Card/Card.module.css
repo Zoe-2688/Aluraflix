@@ -45,7 +45,7 @@
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  height: 20%; /* El espacio para las opciones ocupa el 20% de la altura del contenedor */
+  align-self: flex-end; /* Alinea el contenedor opcional en la parte inferior */
 }
 
 /* Iconos de opciones */

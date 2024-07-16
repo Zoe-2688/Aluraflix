@@ -1,54 +1,58 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './NuevoVideo.module.css';
+import { useNavigate } from 'react-router-dom';
 
-function NuevoVideo() {
+const NuevoVideo = ({ addVideo, categorias }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [image, setImage] = useState('');
   const [video, setVideo] = useState('');
   const [description, setDescription] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
 
+    // Validación de campos
     if (!title || !category || !image || !video || !description) {
       alert('Todos los campos son obligatorios');
       return;
     }
-    
-    // Aquí podrías realizar la llamada fetch o axios para enviar los datos al servidor
+
     const formData = {
-      title,
-      category,
-      image,
-      video,
-      description,
+      titulo: title,
+      link: video,
+      img: image,
+      categoria: category,
     };
 
-    fetch('url_del_servidor', {
+    // Simulación de envío de datos (POST request a json-server)
+    fetch('http://localhost:3001/videos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al enviar los datos al servidor');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Datos enviados correctamente:', data);
-      // Aquí podrías manejar la respuesta del servidor, como actualizar el estado o redirigir a otra página
-    })
-    .catch(error => {
-      console.error('Error en el envío de datos:', error);
-      // Aquí podrías manejar el error, por ejemplo, mostrando un mensaje al usuario
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al enviar los datos al servidor');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Datos enviados correctamente:', data);
+        addVideo(data); // Agregar el nuevo video al estado local
+        handleClear(); // Limpiar formulario después de enviar
+        navigate('/'); // Redirigir al inicio después de agregar el video
+      })
+      
+      .catch(error => {
+        console.error('Error al enviar los datos:', error);
+        // Manejar el error adecuadamente, mostrar mensaje al usuario, etc.
+      });
   };
 
   const handleClear = () => {
@@ -87,10 +91,11 @@ function NuevoVideo() {
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value="">Seleccione una categoría</option>
-              <option value="FRONT END">Front End</option>
-              <option value="BACK END">Back End</option>
-              <option value="INNOVACION Y GESTION">Innovación y Gestión</option>
-              <option value="CONSEJOS">Consejos</option>
+              {categorias.map((cat, index) => (
+                <option key={index} value={cat}>
+                  {cat}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -137,6 +142,6 @@ function NuevoVideo() {
       </form>
     </div>
   );
-}
+};
 
 export default NuevoVideo;

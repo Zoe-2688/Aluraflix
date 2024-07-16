@@ -1,0 +1,19 @@
+.videoPlayer {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+  
+  .videoPlayer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 560px;
+    height: 315px;
+    border: 0;
+  }
+  

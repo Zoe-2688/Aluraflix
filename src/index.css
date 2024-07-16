@@ -1,20 +1,61 @@
+/* index.css */
 /* Importación de la fuente Roboto Condensed desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Definición de variables CSS en :root */
 :root {
-  --font: Roboto Condensed, sans-serif; /* Usar Roboto Condensed en lugar de Roboto */
+  --font: 'Roboto Condensed', sans-serif; /* Usar Roboto Condensed en lugar de Roboto */
   --blanco: #fff;
   --negro: #222;
   --dark-gray: #0f0e0e;
   --azul: #2271D1;
+  --azul-oscuro: #03122F;
 }
 
 /* Estilos para el cuerpo del documento */
 body {
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--dark-gray);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content {
+  flex: 1;
+}
+
+.pie {
+  width: 100%;
+  background-color: var(--negro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 3px solid #0056b3;
+  box-shadow: 0 0 10px #007bff;
+  transition: all 0.3s ease;
+}
+
+.pie img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.pie h2 {
+  color: var(--blanco);
+  font-size: 20px;
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
 }

@@ -1,24 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
 .pie {
+    width: 100%;
     background-color: var(--negro);
     display: flex;
-    flex-direction: column; /* Cambia la dirección de los elementos a columna */
-    align-items: center; /* Centra horizontalmente los elementos en la columna */
-    justify-content: center; /* Centra verticalmente los elementos en la columna */
-    padding: 20px; /* Añade un poco de padding para espaciar los elementos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     border: 3px solid #0056b3;
     box-shadow: 0 0 10px #007bff;
     transition: all 0.3s ease;
-    margin-top: 62px;
+    position: relative;
 }
 
-img {
+.pie img {
     width: 100px;
-    margin-bottom: 10px; /* Espacio entre el logo y el texto */
+    margin-bottom: 10px;
 }
 
 .pie h2 {
     color: var(--blanco);
     font-size: 20px;
-    font-family:'Kaushan Script';
-    text-align: center; /* Asegura que el texto esté centrado */
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
 }

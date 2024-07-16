@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Cabecera.module.css';
 import logo from './LogoAluraflix.png';
@@ -12,8 +13,8 @@ function Cabecera() {
         </section>
       </Link>
       <nav>
-        <CabeceraLink url="/">Home</CabeceraLink>
-        <CabeceraLink url="/nuevo-video">Nuevo Video</CabeceraLink>
+        <CabeceraLink to="/">Home</CabeceraLink>
+        <CabeceraLink to="/nuevo-video">Nuevo Video</CabeceraLink>
       </nav>
     </header>
   );

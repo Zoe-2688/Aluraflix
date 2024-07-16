@@ -5,25 +5,49 @@ function VideoList() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    // Simular una llamada fetch a db.json
     fetch("/Data/db.json")
       .then((response) => response.json())
       .then((data) => {
-        // Filtrar los videos del ID 1 al 9
-        const filteredVideos = data.videos.filter(video => video.id >= 1 && video.id <= 9);
-        setVideos(filteredVideos);
+        console.log("Datos obtenidos:", data);
+        setVideos(data.videos); // Asigna todos los videos, sin filtrar
       })
-      .catch((error) => console.error("Error fetching video data:", error));
+      .catch((error) =>
+        console.error("Error fetching video data:", error)
+      );
   }, []);
 
+  const addVideo = (newVideo) => {
+    setVideos([...videos, newVideo]); // Agrega el nuevo video al estado
+  };
+
+  const handleBorrar = (id) => {
+    console.log(`Intentando borrar video con ID ${id}`);
+    fetch(`/videos/${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al borrar el video');
+        }
+        console.log(`Video con ID ${id} borrado correctamente`);
+        // Actualizar el estado local después de borrar el video
+        setVideos(prevVideos => prevVideos.filter(video => video.id !== id));
+      })
+      .catch(error => {
+        console.error('Error al borrar el video:', error);
+        // Manejar el error adecuadamente, mostrar un mensaje al usuario, etc.
+      });
+  };
+
   return (
-    <div className={styles.videoList}>
+    <div className="videoList">
       {videos.map((video) => (
         <Card
           key={video.id}
           id={video.id}
-          img={video.img} // Pasar la imagen al componente Card
+          img={video.img}
           titulo={video.titulo}
+          onDelete={handleBorrar} // Pasa la función handleBorrar al componente Card
         />
       ))}
     </div>
@@ -31,3 +55,4 @@ function VideoList() {
 }
 
 export default VideoList;
+
