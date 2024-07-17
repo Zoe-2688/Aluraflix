@@ -1,12 +1,13 @@
-.link{
+.link {
     font-size: 18px;
     font-weight: 400;
     padding: 1em;
     color: var(--blanco);
-}
-.buttonLink {
+  }
+  
+  .buttonLink {
     display: inline-block;
-    width:110px;
+    width: 150px;
     height: auto;
     line-height: 30px;
     text-align: center;
@@ -16,15 +17,25 @@
     text-decoration: none;
     color: white;
     background-color: #000000; /* Color de fondo para el botón */
-    border: 2px solid #0056b3;
+    border: 2px solid #77b5f7;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease; /* Transición suave para todos los cambios */
-}
-
-.buttonLink:hover {
+  }
+  
+  .buttonLink:hover {
     background-color: #0056b3; /* Color de fondo cuando se hace hover */
     border-color: #007bff;
     box-shadow: 0 0 10px #007bff;
-}
+  }
+  
+  /* Estilos específicos para los enlaces de Home y Nuevo Video */
+  .homeLink,
+  .nuevoVideoLink {
+    font-size: 20px; /* Aumentar el tamaño de la fuente */
+    font-weight: bold; /* Hacer el texto más grueso */
+    width: 180px; /* Aumentar el ancho del botón */
+    padding: 15px 25px; /* Aumentar el padding */
+  }
+  

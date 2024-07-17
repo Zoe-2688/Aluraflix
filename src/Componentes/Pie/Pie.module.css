@@ -27,6 +27,7 @@ main {
     box-shadow: 0 0 10px #007bff;
     transition: all 0.3s ease;
     position: relative;
+    margin-top: 60px;
 }
 
 .pie img {

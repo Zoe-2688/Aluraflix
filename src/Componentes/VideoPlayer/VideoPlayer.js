@@ -4,8 +4,8 @@ const VideoPlayer = ({ videoSrc }) => {
   return (
     <div>
       <iframe
-        width="560"
-        height="315"
+        width="1000"
+        height="500"
         src={videoSrc}
         title="Video player"
         frameBorder="0"

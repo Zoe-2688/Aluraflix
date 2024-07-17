@@ -1,6 +1,6 @@
 .container {
     position: fixed;
-    top: 70%; /* Ajusta según sea necesario */
+    top: 45%; /* Ajusta según sea necesario */
     right: 20px; /* Ajusta según sea necesario */
     transform: translateY(-50%);
     width: 500px; /* Ancho del contenedor */
